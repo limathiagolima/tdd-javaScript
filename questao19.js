@@ -4,18 +4,18 @@ Implemente um algoritmo que simule que os amigos de Isadora, Pedro, Bianca e Fer
 Dica: Crie um objeto que contenha uma array de objetos chamados postagens, e uma dessas postagens vai ter outra array chamada de curtidas,
 onde serão armazenados os usuários que curtiram. 
 */
-let amigos = ['Pedro', 'Bianca','Fernanda']
-const postagens = {
-    post:{conteudo :'O Dia está tão lindo!',
-          curtidas :[]}
-}
-          
+//let amigos = ['Pedro', 'Bianca','Fernanda']
+    
 const realizarInteracao = ((quemCurtiu) => {
-  if (!postagens.post.curtidas.includes(quemCurtiu)) {
+    const postagens = {
+        post:{conteudo :'O Dia está tão lindo!',
+              curtidas :[]}
+    }
+   
+  if (!postagens.post.curtidas.includes(quemCurtiu) && quemCurtiu != null) {
     postagens.post.curtidas.push(quemCurtiu)
   }
+  return postagens.post.curtidas
 })
 
-realizarInteracao('Bianca')
-realizarInteracao('Pedro')
-console.log(postagens)
+module.exports = realizarInteracao;
